@@ -1,0 +1,70 @@
+/* -- Keyframe Mixin --*/
+@mixin keyframes ($animationName) {
+	@-webkit-keyframes $animationName {
+		@content;
+	}
+}
+
+
+@-webkit-keyframes slide{
+	0%{
+		left:0;
+	}
+	50%{
+	}
+	100%{
+		left:100%;
+	}
+}
+
+@-webkit-keyframes fadeOut{
+	0%{
+		opacity:1;
+	}
+	100%{
+		opacity:0;
+	}
+}
+@mixin keyframes( $animationName )
+{
+    @-webkit-keyframes $animationName {
+        @content;
+    }
+    @-moz-keyframes $animationName {
+        @content;
+    }
+    @-o-keyframes $animationName {
+        @content;
+    }
+    @keyframes $animationName {
+        @content;
+    }
+}
+/* Animation Mixin */
+/* Use - @include animationMixin(fadeIn, 1s, 1, normal, ease-out, forwards, 0)*/
+
+@mixin animationMixin($name: fadeIn, $duration: 1s, $iteration-count: 1, $direction: normal, $timing-function: 1, $fill-mode: forwards, $delay: 0){
+  -webkit-animation-name: $name;
+  -webkit-animation-duration: $duration;
+  -webkit-animation-iteration-count: $iteration-count;
+  -webkit-animation-direction: $direction;
+  -webkit-animation-timing-function: $timing-function;
+  -webkit-animation-fill-mode: $fill-mode;
+  -webkit-animation-delay: $delay;
+
+  -moz-animation-name: $name;
+  -moz-animation-duration: $duration;
+  -moz-animation-iteration-count: $iteration-count;
+  -moz-animation-direction: $direction;
+  -moz-animation-timing-function: $timing-function;
+  -moz-animation-fill-mode: $fill-mode;
+  -moz-animation-delay: $delay;
+
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-iteration-count: $iteration-count;
+  animation-direction: $direction;
+  animation-timing-function: $timing-function;
+  animation-fill-mode: $fill-mode;
+  animation-delay: $delay;
+}

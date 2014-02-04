@@ -1,0 +1,30 @@
+/* -- Setting up Reusable Animations -- */
+/* -- Fade In Animation -- */
+@include keyframes( fadeIn )
+{
+    0% {
+       opacity:0;
+        // you can also use mixins inside this mixin!
+        //@include transform( scale(1) );
+    }
+
+    100% {
+        opacity:1;
+    }
+}
+
+/* -- Slide Down Animation -- */
+@include keyframes( slideDown )
+{
+    0% {
+       -webkit-transform: translate(0,-500px);
+       -moz-transform: translate(0,-500px);
+       transform: translate(0,-500px);
+    }
+
+    100% {
+        -webkit-transform: translate(0,0);
+        -moz-transform: translate(0,0);
+        transform: translate(0,0);
+    }
+}

@@ -1,0 +1,38 @@
+@import "mixin";
+
+@import "animation";
+
+body{margin:0}
+
+/* -- Base Banners -- */
+.banner{ height:490px; width:100%; z-index:0; top:0;
+  background:url(../img/banner-placeholder.jpg) no-repeat center top fixed;
+  .interior-video-wrapper{ background:rgba(0,0,0,0.85);position:relative;top:-490px; }
+  iframe{ display:block; margin:0 auto; padding:0 0;} 
+}
+
+/* Fade In Animation */
+.banner .animate{ top:0; opacity:0; @include animationMixin(fadeIn, 0.75s, 1, normal, ease-out, forwards, 0); }
+
+/* Slide Down Animation */
+.banner .animate {  opacity:1; @include animationMixin(slideDown, 0.2s, 1, normal, ease-out, forwards, 0); }
+
+body{ position:relative; }
+
+h1{ 
+	background-color: red; 
+	width:150px;
+	position:absolute;
+	@include animationMixin(FadeOut , 1s, 1, normal, ease-out, forwards, 0);
+}
+
+.slideIn{
+	@include animationMixin(slide , 1s, 1, normal, ease-out, forwards, 0);
+}
+
+h2{
+	background-color: blue; 
+	position:absolute;
+	width:150px;
+	@include animationMixin(slideOut, 1s, 1, normal, ease-out, forwards, 0);
+}
